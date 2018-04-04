@@ -102,3 +102,5 @@ class XMLHttpRequestUpload extends XMLHttpRequestEventTarget
 
 # Export the XMLHttpRequestUpload constructor.
 XMLHttpRequest.XMLHttpRequestUpload = XMLHttpRequestUpload
+# Export the FormData constructor.
+XMLHttpRequest.FormData = FormData
