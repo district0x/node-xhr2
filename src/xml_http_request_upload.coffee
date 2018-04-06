@@ -56,6 +56,8 @@ class XMLHttpRequestUpload extends XMLHttpRequestEventTarget
       data.on('data', (data) -> body += data.toString())
       data.resume()
       while !data.pauseStreams then
+      #Ugly hack to round it up correctly
+      body += FormData.LINE_BREAK+ '--' + data.getBoundary() + '--' + FormData.LINE_BREAK
       @_contentType = data.getHeaders()['content-type']
       @_body = body
     else
